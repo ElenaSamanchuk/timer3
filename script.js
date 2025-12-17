@@ -1,4 +1,4 @@
-const endDate = new Date("2025-12-16T23:59:59");
+const endDate = new Date("2025-12-18T23:59:59");
 function getWordForm(n, forms) {
   return forms[
     n % 10 === 1 && n % 100 !== 11
@@ -60,6 +60,7 @@ function updateTimer() {
   previousLastDigit = secondRight;
 }
 setInterval(updateTimer, 1000);
+
 
 
 

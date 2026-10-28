@@ -1,4 +1,4 @@
-const endDate = new Date("2026-10-27T23:59:59");   
+const endDate = new Date("2026-11-02T23:59:59");   
 function getWordForm(n, forms) {
   return forms[
     n % 10 === 1 && n % 100 !== 11

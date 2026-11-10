@@ -15,8 +15,8 @@ if (!process.env.TIMER_TEST_SINGLE_ZONE) {
   process.exit(0);
 }
 const source = fs.readFileSync(path.join(__dirname,'../script.js'),'utf8');
-const deadline = Date.parse('2026-11-06T20:59:59.000Z');
-assert.equal(deadline, 1793998799000);
+const deadline = Date.parse('2026-11-10T20:59:59.000Z');
+assert.equal(deadline, 1794344399000);
 let now = deadline - (86400+2*3600+3*60+4)*1000;
 const container = {innerHTML:''};
 let tick;
@@ -33,4 +33,4 @@ for (const offset of [-1000, 0, 1000, 86400000]) {
   if(offset>=0){assert(container.innerHTML.includes('00'));assert(container.innerHTML.includes('завершено'));assert(!container.innerHTML.includes('<span>-'));}
   else assert(container.innerHTML.includes('секунда'));
 }
-console.log(`PASS ${process.env.TZ}: deadline=2026-11-06T20:59:59.000Z, immediate render and expiry boundaries`);
+console.log(`PASS ${process.env.TZ}: deadline=2026-11-10T20:59:59.000Z, immediate render and expiry boundaries`);
